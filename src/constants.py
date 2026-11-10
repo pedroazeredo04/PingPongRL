@@ -1,0 +1,41 @@
+## ADAPTED FROM https://github.com/dryanguasr/TableTennis/blob/main/src/table_tennis/constants.py
+
+# Units are SI.
+BALL_MASS = 2.7e-3     ## 2.7 g
+BALL_RADIUS = 20.0e-3  ## 20 mm
+PI = 3.14159265359
+BALL_AREA = (PI * BALL_RADIUS**2)
+
+BALL_ROT_INERTIA = 2 / 3 * BALL_MASS * BALL_RADIUS**2
+NET_RESTITUTION = 0.5
+TABLE_FRICTION = 0.25
+
+# ACE baseline from Dürr et al., Nature 652, 886–891 (2026).
+AIR_DENSITY = 1.204
+DRAG_COEFFICIENT = 0.55
+# k_D = C_M ρ A / (2m)
+DRAG_CONSTANT = DRAG_COEFFICIENT * AIR_DENSITY * BALL_AREA / (2 * BALL_MASS)
+# k_M = ρ A r / (2m)
+MAGNUS_CONSTANT = AIR_DENSITY * BALL_AREA * BALL_RADIUS / (2 * BALL_MASS)
+GRAVITY = 9.810  ## m/s**2
+
+TABLE_LENGTH = 2.740 ## m
+TABLE_WIDTH = 1.525 ## m
+TABLE_HEIGHT = 0.760 ## m
+NET_HEIGHT = 0.1525 ## m
+NET_OVERHANG_PER_SIDE = 0.1525 ## m
+
+RACKET_RESTITUTION = 1.0
+RACKET_FRICTION = 1.0
+
+HITTING_PLANE_OFFSET = 10e-2
+HITTING_PLANE_X = -TABLE_LENGTH/2 + HITTING_PLANE_OFFSET  # 10cm from robot's side of the table
+
+DT = 0.005  # sec
+T_MAX = 1.5 # sec
+STEP_LIMIT = 10000000
+
+# Default camera and animation settings.
+PLOT_PERIOD = 5
+YAW = -45.0
+PITCH = 23.5
